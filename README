@@ -1,4 +1,5 @@
-This is a plugin for Nagios that make a MySQL query and parse the results.  It is written in Ruby (and tested against 1.9 only).
+This is a plugin for Nagios that make a MySQL query and parse the results.
+It is written in Ruby (and tested against 1.9 only - ymmv).
 Much of this plugin is recycled my check_http_json.rb plugin.  All this and more at http://github.com/phrawzty .
 
 Usage ./check_mysql_query.rb [-c <config_file>] -q 'SELECT etc...'
@@ -34,17 +35,17 @@ How you choose to implement the plugin is, of course, up to you.  Here are some 
 # check a mysql query for a string result
 define command {
     command_name    check_mysql_query-string
-    command_line    /srv/nagios/plugins/check_mysql_query.rb -f /srv/nagios/configs/check_mysql_query.yml -q '$ARG1$' -s '$ARG2$'
+    command_line    /<path>/check_mysql_query.rb -f /<path>/check_mysql_query.yml -q '$ARG1$' -s '$ARG2$'
 }
 # do the same but check against a regex
 define command {
     command_name    check_mysql_query-regex
-    command_line    /srv/nagios/plugins/check_mysql_query.rb -f /srv/nagios/configs/check_mysql_query.yml -q '$ARG1$' -r '$ARG2$'
+    command_line    /<path>/check_mysql_query.rb -f /<path>/check_mysql_query.yml -q '$ARG1$' -r '$ARG2$'
 }
 # and finally some standard integer results (good for warn and crit levels)
 define command {
     command_name    check_mysql_query-int
-    command_line    /srv/nagios/plugins/check_mysql_query.rb -f /srv/nagios/configs/check_mysql_query.yml -q '$ARG1$' -w '$ARG2$' -c '$ARG3$'
+    command_line    /<path>/check_mysql_query.rb -f /<path>/check_mysql_query.yml -q '$ARG1$' -w '$ARG2$' -c '$ARG3$'
 }
 
 Finally, I invite you to peruse the commit history for the list of contributors :
