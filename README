@@ -1,4 +1,4 @@
-This is a plugin for Nagios that make a MySQL query and parse the results.
+This is a plugin for Nagios that makes a MySQL query and parses the results.
 It is written in Ruby (and tested against 1.9 only - ymmv).
 Much of this plugin is recycled my check_http_json.rb plugin.  All this and more at http://github.com/phrawzty .
 
