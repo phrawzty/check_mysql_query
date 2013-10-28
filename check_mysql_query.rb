@@ -247,7 +247,7 @@ end
 
 # If we're looking for a numeric result...
 if @options[:warn] or @options[:crit] then
-    if result =~ /\D/ then
+    if not Float(result) then
         result = 'Result contains non-numeric characters.'
         exit_code = 3
     end
